@@ -67,6 +67,7 @@ char get_user_char() {
     return letter;
 }
 
+
 void start_game(struct locations* bombs, int bomb_location_info[][DIM], int size_of_grid, int players_info[][DIM], int no_of_bombs)
 {
     int bombs_found = 0;

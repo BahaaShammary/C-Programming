@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="Assignment2_3" targetName="Assignment2_3" />
+      <config projectName="Assignment2_4" targetName="Assignment2_4" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b8a58fb-2878-4229-b4bc-282332a04d1f" name="Default Changelist" comment="" />
+    <list default="true" id="ea3d3afb-059d-4b77-b92a-f3aa3a55e089" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="30" selection-end-line="140" selection-end-column="1" />
+            <state relative-caret-position="155">
+              <caret line="147" column="29" selection-end-line="174" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -45,8 +45,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game_functions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="63" column="21" selection-end-line="162" />
+            <state relative-caret-position="68">
+              <caret line="4" column="24" selection-end-line="163" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game_functions.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="26" lean-forward="true" selection-end-line="26" />
+            <state relative-caret-position="240">
+              <caret line="16" column="10" lean-forward="true" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -65,9 +68,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/game_functions.c" />
         <option value="$PROJECT_DIR$/game_functions.h" />
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/game_functions.c" />
       </list>
     </option>
   </component>
@@ -87,8 +90,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="Assignment2_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment2.3" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment2_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment2.4" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -115,7 +118,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Assignment2_3" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="noclues" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Assignment2_3" TARGET_NAME="Assignment2_3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Assignment2_3" RUN_TARGET_NAME="Assignment2_3">
+    <configuration name="Assignment2_4" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="clues" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Assignment2_4" TARGET_NAME="Assignment2_4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Assignment2_4" RUN_TARGET_NAME="Assignment2_4">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -126,24 +129,24 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9b8a58fb-2878-4229-b4bc-282332a04d1f" name="Default Changelist" comment="" />
-      <created>1555093763532</created>
+      <changelist id="ea3d3afb-059d-4b77-b92a-f3aa3a55e089" name="Default Changelist" comment="" />
+      <created>1555095291332</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1555093763532</updated>
-      <workItem from="1555093765385" duration="2167000" />
+      <updated>1555095291332</updated>
+      <workItem from="1555095292885" duration="4332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2167000" />
+    <option name="totallyTimeSpent" value="4332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1292" height="702" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CMake" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -173,8 +176,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="30" selection-end-line="140" selection-end-column="1" />
+        <state relative-caret-position="155">
+          <caret line="147" column="29" selection-end-line="174" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -183,15 +186,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game_functions.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="63" column="21" selection-end-line="162" />
+        <state relative-caret-position="68">
+          <caret line="4" column="24" selection-end-line="163" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game_functions.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" lean-forward="true" selection-end-line="26" />
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="true" selection-end-line="26" />
         </state>
       </provider>
     </entry>
