@@ -47,24 +47,13 @@ RM = "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.4"
+CMAKE_SOURCE_DIR = "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.6"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.4\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.6\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -77,11 +66,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.4\cmake-build-debug\CMakeFiles" "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.4\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.6\cmake-build-debug\CMakeFiles" "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.6\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.4\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\bahaa\Google Drive\Year 2\Semester 2\C\CLion Projects\Assignment2.6\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Assignment2_4
+# Target rules for targets named Assignment2_6
 
 # Build rule for target.
-Assignment2_4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 Assignment2_4
-.PHONY : Assignment2_4
+Assignment2_6: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Assignment2_6
+.PHONY : Assignment2_6
 
 # fast build rule for target.
-Assignment2_4/fast:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/build
-.PHONY : Assignment2_4/fast
+Assignment2_6/fast:
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/build
+.PHONY : Assignment2_6/fast
 
 game_functions.obj: game_functions.c.obj
 
@@ -128,7 +128,7 @@ game_functions.obj: game_functions.c.obj
 
 # target to build an object file
 game_functions.c.obj:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/game_functions.c.obj
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/game_functions.c.obj
 .PHONY : game_functions.c.obj
 
 game_functions.i: game_functions.c.i
@@ -137,7 +137,7 @@ game_functions.i: game_functions.c.i
 
 # target to preprocess a source file
 game_functions.c.i:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/game_functions.c.i
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/game_functions.c.i
 .PHONY : game_functions.c.i
 
 game_functions.s: game_functions.c.s
@@ -146,7 +146,7 @@ game_functions.s: game_functions.c.s
 
 # target to generate assembly for a file
 game_functions.c.s:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/game_functions.c.s
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/game_functions.c.s
 .PHONY : game_functions.c.s
 
 main.obj: main.c.obj
@@ -155,7 +155,7 @@ main.obj: main.c.obj
 
 # target to build an object file
 main.c.obj:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/main.c.obj
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -164,7 +164,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/main.c.i
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -173,7 +173,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles\Assignment2_4.dir\build.make CMakeFiles/Assignment2_4.dir/main.c.s
+	$(MAKE) -f CMakeFiles\Assignment2_6.dir\build.make CMakeFiles/Assignment2_6.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -182,9 +182,9 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... rebuild_cache
-	@echo ... Assignment2_4
+	@echo ... Assignment2_6
 	@echo ... edit_cache
+	@echo ... rebuild_cache
 	@echo ... game_functions.obj
 	@echo ... game_functions.i
 	@echo ... game_functions.s

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/bahaa/Google Drive/Year 2/Semester 2/C/CLion Projects/Assignment2.6/game_functions.c
+stdio.h
+-
+stdlib.h
+-
+game_functions.h
+C:/Users/bahaa/Google Drive/Year 2/Semester 2/C/CLion Projects/Assignment2.6/game_functions.h
+
+C:/Users/bahaa/Google Drive/Year 2/Semester 2/C/CLion Projects/Assignment2.6/game_functions.h
+stdbool.h
+-
+
+C:/Users/bahaa/Google Drive/Year 2/Semester 2/C/CLion Projects/Assignment2.6/main.c
+stdio.h
+-
+stdlib.h
+-
+game_functions.h
+C:/Users/bahaa/Google Drive/Year 2/Semester 2/C/CLion Projects/Assignment2.6/game_functions.h
+string.h
+-
+time.h
+-
+

@@ -63,7 +63,11 @@ char get_user_char() {
     char letter;
     scanf("%c", &letter);
     getchar();
-
+    while ((letter != 'A') && (letter != 'B') && (letter != 'C') && (letter != 'D')) {
+        printf("\nInvalid input, please enter again (A or B or C or D):\n");
+        scanf ("\n%c", &letter);
+        getchar();
+    }
     return letter;
 }
 

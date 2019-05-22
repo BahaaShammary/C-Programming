@@ -21,8 +21,8 @@ int main(int argc, char* argv[]) {
     int of_bombs = 2;
     struct locations* pbombs = (struct locations * ) malloc(sizeof(struct locations)  * 2) ;
 
-    pbombs[0].x = 1;
-    pbombs[0].y  = 1;
+    pbombs[0].x = 0;
+    pbombs[0].y  = 0;
     pbombs[0].found = false;
 
     pbombs[1].x = 2;
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
     int size = DIM;
 
     if (argc == 2) {
-        printf("Please provide the command line arguments:");
+        printf("Please enter \"clues\" or \"noclues\" :");
     }
     time_t t;
     srand((unsigned) time(&t));
