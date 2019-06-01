@@ -30,8 +30,11 @@ int main(int argc, char* argv[]) {
     pbombs[1].found = false;
 
     int size = DIM;
+    printf("argv[2] string %s\n", argv[2]);
+    int num = atoi(argv[2]);
+    printf("Converted argv[2] to int %d\n", num);
 
-    if (argc == 2) {
+    if (argc == 3) {
         printf("Please enter \"clues\" or \"noclues\" :");
     }
     time_t t;
