@@ -8,39 +8,86 @@
 // Created by Bahaulddin
 //
 int main(int argc, char* argv[]) {
-    int bomb_location_info[4][4] =     { 1,1,1,0,
-                                         1,0,2,1,
-                                         1,1,2,0,
-                                         0,0,1,1};
+    time_t t;
+    srand((unsigned) time(&t));
+
+    int bomb_location_info[4][4] =     { 0,0,0,0,
+                                         0,0,0,0,
+                                         0,0,0,0,
+                                         0,0,0,0};
 
     int known_location_info[4][4] =  {UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN,
                                       UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN,
                                       UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN,
                                       UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN};
 
-    int of_bombs = 2;
+//    printf("argv[2] string %s\n", argv[2]);
+    int num = atoi(argv[2]);
+//    printf("Converted argv[2] to int %d\n", num);
+    int of_bombs = num;
+//    printf("Number of bombs %d", of_bombs);
     struct locations* pbombs = (struct locations * ) malloc(sizeof(struct locations)  * 2) ;
 
-    pbombs[0].x = 0;
-    pbombs[0].y  = 0;
-    pbombs[0].found = false;
+    // Creating the random coordinates of x and y for the bombs
+    int i = 0;
+    int x,y;
+    for (i = 0; i<of_bombs;i++) {
+        x = rand() % 4; // create the random number then assign it to a row
+        y = rand() % 4; // create the random number then assign it to a row
+        printf("x %d y %d", x, y);
 
-    pbombs[1].x = 2;
-    pbombs[1].y  = 3;
-    pbombs[1].found = false;
+        pbombs[i].x = x;
+        pbombs[i].y  = y;
+        pbombs[i].found = false;
+
+    }
+
+    // matrix creation for bombs by adding one around the bomb in 8 cells
+    int z = 0;
+    for (z; z< of_bombs;z++) {
+        bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y) - 1]++; // 0 0
+        bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y)]++; // 0 1
+        bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y) + 1]++; // 0 2
+        bomb_location_info[(pbombs[z].x)][(pbombs[z].y) - 1]++; // 1 0
+        bomb_location_info[(pbombs[z].x)][(pbombs[z].y) + 1]++; // 1 2
+        bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y) - 1]++; // 2 0
+        bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y)]++; // 2 1
+        bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y) + 1]++; // 2 2
+    }
+
+    // display
+    int n = 0;
+    printf("\n\n\n");
+    printf("   A B C D \n");
+    for (n;n<DIM;n++) {
+        if (n == 0) {
+            printf("A: ");
+        }
+        else if (n == 1) {
+            printf("B: ");
+        }
+        else if (n == 2) {
+            printf("C: ");
+        }
+        else if (n == 3) {
+            printf("D: ");
+        }
+        int j = 0;
+        for (j;j<DIM;j++) {
+                printf("%d ", bomb_location_info[n][j]);
+        }
+        printf("\n");
+    }
+
 
     int size = DIM;
-    printf("argv[2] string %s\n", argv[2]);
-    int num = atoi(argv[2]);
-    printf("Converted argv[2] to int %d\n", num);
 
     if (argc == 3) {
         printf("Please enter \"clues\" or \"noclues\" :");
     }
-    time_t t;
-    srand((unsigned) time(&t));
 
-    int i,r0,r1, r2,r3,r4,r5;
+    i = 0;
+    int r0,r1, r2,r3,r4,r5;
     for (i = 0; i<5;i++) {
         r0 = rand() % 4; // create the random number then assign it to a row
         if (i == 0) {
