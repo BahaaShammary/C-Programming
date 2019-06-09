@@ -34,30 +34,83 @@ int main(int argc, char* argv[]) {
     for (i = 0; i<of_bombs;i++) {
         x = rand() % 4; // create the random number then assign it to a row
         y = rand() % 4; // create the random number then assign it to a row
-        printf("x %d y %d", x, y);
+        printf("\nx %d y %d", x, y);
 
         pbombs[i].x = x;
         pbombs[i].y  = y;
         pbombs[i].found = false;
 
     }
+//    pbombs[0].x = 3;
+//    pbombs[0].y  = 0;
+//    pbombs[0].found = false;
+//    pbombs[1].x = 2;
+//    pbombs[1].y  = 1;
+//    pbombs[1].found = false;
+
+    printf("\nFirst bomb %d %d ",pbombs[0].x, pbombs[0].y);
+    printf("\nSecond bomb %d %d ",pbombs[1].x, pbombs[1].y);
+
 
     // matrix creation for bombs by adding one around the bomb in 8 cells
     int z = 0;
     for (z; z< of_bombs;z++) {
-        bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y) - 1]++; // 0 0
-        bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y)]++; // 0 1
-        bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y) + 1]++; // 0 2
-        bomb_location_info[(pbombs[z].x)][(pbombs[z].y) - 1]++; // 1 0
-        bomb_location_info[(pbombs[z].x)][(pbombs[z].y) + 1]++; // 1 2
-        bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y) - 1]++; // 2 0
-        bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y)]++; // 2 1
-        bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y) + 1]++; // 2 2
+        if ((pbombs[z].x) - 1 < 0) { // top of the bombs is less than zero
+            // do nothing
+        }
+        else {
+            if ((pbombs[z].y) - 1 < 0) {
+                // do nothing
+            }
+            else {
+                bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y) - 1]++; // top left
+            }
+            bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y)]++; // top
+            if ((pbombs[z].y) + 1 > 3) {
+                // do nothing
+            }
+            else {
+                bomb_location_info[(pbombs[z].x) - 1][(pbombs[z].y) + 1]++; // top right
+            }
+        }
+        if ((pbombs[z].y) - 1 < 0) { // if the left of the bomb column is less than zero
+            // do nothing
+        }
+        else {
+            bomb_location_info[(pbombs[z].x)][(pbombs[z].y) - 1]++; // left
+        }
+        if ((pbombs[z].y) + 1 > 3) {
+            // do nothing
+        }
+        else {
+            bomb_location_info[(pbombs[z].x)][(pbombs[z].y) + 1]++; // right
+        }
+        if ((pbombs[z].x) + 1 > 3) {
+           // do nothing
+        }
+        else {
+            if ((pbombs[z].y) - 1 < 0) {
+                // do nothing
+            }
+            else {
+                bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y) - 1]++; // bottom left
+            }
+            bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y)]++; // bottom
+            if ((pbombs[z].y) + 1 > 3) {
+                // do nothing
+            }
+            else {
+                bomb_location_info[(pbombs[z].x) + 1][(pbombs[z].y) + 1]++; // bottom right
+            }
+        }
+
+
     }
 
-    // display
+
+    // display  - can delete later:
     int n = 0;
-    printf("\n\n\n");
+    printf("\n");
     printf("   A B C D \n");
     for (n;n<DIM;n++) {
         if (n == 0) {
@@ -74,7 +127,7 @@ int main(int argc, char* argv[]) {
         }
         int j = 0;
         for (j;j<DIM;j++) {
-                printf("%d ", bomb_location_info[n][j]);
+            printf("%d ", bomb_location_info[n][j]);
         }
         printf("\n");
     }
@@ -86,7 +139,6 @@ int main(int argc, char* argv[]) {
         printf("Please enter \"clues\" or \"noclues\" :");
     }
 
-    i = 0;
     int r0,r1, r2,r3,r4,r5;
     for (i = 0; i<5;i++) {
         r0 = rand() % 4; // create the random number then assign it to a row
@@ -107,9 +159,6 @@ int main(int argc, char* argv[]) {
         }
     }
 
-//    printf("r3 -> %d\n", r3);
-//    printf("r4 -> %d\n", r4);
-//    printf("r5 -> %d\n", r5);
 
     int j,c0,c1, c2,c3,c4,c5;
     for (j = 0; j<5;j++) {
@@ -130,23 +179,17 @@ int main(int argc, char* argv[]) {
             c5 = c0;
         }
     }
-    printf("\nr1 %d c1 %d\n", r1, c1);
-    printf("r2 %d c2 %d\n", r2, c2);
-
-
     // check if the two random numbers are the coordinates of a bomb, if so, create two new random numbers and check them again
     bool again = true;
     while (again) {
         if ((r1 == pbombs[0].x && c1 == pbombs[0].y) || (r1 == pbombs[1].x && c1 == pbombs[1].y)) {
             r1 = rand() % 4;
             c1 = rand() % 4;
-//            printf("r1 %d c1 %d", r1, c1);
             again = true;
         }
         else if ((r2 == pbombs[1].x && c2 == pbombs[1].y) || (r2 == pbombs[0].x && c2 == pbombs[0].y)) {
             r2 = rand() % 4;
             c2 = rand() % 4;
-//            printf("r2 %d c2 %d", r2, c2);
             again = true;
         }
         else {
@@ -161,10 +204,6 @@ int main(int argc, char* argv[]) {
 
     if (compare ==0 ) {
         printf("CLUES\n");
-        printf("r3 %d c3 %d\n", r3, c3);
-        printf("r4 %d c4 %d\n", r4, c4);
-        printf("r5 %d c5 %d\n", r5, c5);
-
         bool again = true;
         while (again) {
             if ((r3 == pbombs[0].x && c3 == pbombs[0].y) || (r3 == pbombs[1].x && c3 == pbombs[1].y)) {
@@ -176,31 +215,26 @@ int main(int argc, char* argv[]) {
             else if ((r3 == r1 && c3 == c1) || (r3 == r2 && c3 == c2)) {
                 r3 = rand() % 4;
                 c3 = rand() % 4;
-//                printf("r3 %d c3 %d", r3, c3);
                 again = true;
             }
             else if ((r4 == pbombs[0].x && c4 == pbombs[0].y) || (r4 == pbombs[1].x && c4 == pbombs[1].y)) {
                 r4 = rand() % 4;
                 c4 = rand() % 4;
-//                printf("r4 %d c4 %d", r4, c4);
                 again = true;
             }
             else if ((r4 == r1 && c4 == c1) || (r4 == r2 && c4 == c2)) {
                 r4 = rand() % 4;
                 c4 = rand() % 4;
-//                printf("r4 %d c4 %d", r4, c4);
                 again = true;
             }
             else if ((r5 == pbombs[0].x && c5 == pbombs[0].y) || (r5 == pbombs[1].x && c5 == pbombs[1].y)) {
                 r5 = rand() % 4;
                 c5 = rand() % 4;
-//                printf("r5 %d c5 %d", r5, c5);
                 again = true;
             }
             else if ((r5 == r1 && c5 == c1) || (r5 == r2 && c5 == c2)) {
                 r5 = rand() % 4;
                 c5 = rand() % 4;
-//                printf("r5 %d c5 %d", r5, c5);
                 again = true;
             }
 
